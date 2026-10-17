@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HeartNote Privacy Policy. Learn how HeartNote protects your diary entries, personal data, and optional cloud backups.">
+    <title>HeartNote - Privacy Policy</title>
+
+    <style>
+        :root {
+            --primary: #C77B58;
+            --background: #FFF9F5;
+            --surface: #FFFFFF;
+            --text: #332923;
+            --muted: #74665E;
+            --border: #EADFD7;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--background);
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            line-height: 1.75;
+        }
+
+        header {
+            background: var(--primary);
+            color: #FFFFFF;
+            padding: 42px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+            font-size: 34px;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 32px auto;
+            padding: 36px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        h2 {
+            margin-top: 36px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+            color: var(--primary);
+            font-size: 22px;
+        }
+
+        h3 {
+            margin-top: 24px;
+            font-size: 18px;
+        }
+
+        a {
+            color: #99552F;
+            overflow-wrap: anywhere;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .policy-meta {
+            padding: 18px;
+            background: var(--background);
+            border-radius: 8px;
+            margin-bottom: 28px;
+        }
+
+        .notice {
+            padding: 14px 18px;
+            border-left: 4px solid var(--primary);
+            background: var(--background);
+            margin: 18px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 24px 16px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 30px 16px;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            main {
+                margin: 16px 10px;
+                padding: 20px 16px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>HeartNote</h1>
+    <p>Privacy Policy</p>
+</header>
+
+<main>
+    <div class="policy-meta">
+        <strong>Effective date:</strong> October 10, 2026<br>
+        <strong>App:</strong> HeartNote<br>
+        <strong>Package:</strong> <code>com.diary.heartnote</code><br>
+        <strong>Developer:</strong> [Your name or company name]<br>
+        <strong>Contact:</strong>
+        <a href="mailto:your-email@example.com">your-email@example.com</a>
+    </div>
+
+    <h2>1. Introduction</h2>
+    <p>
+        HeartNote is a private diary app. This policy explains what information
+        the app handles, where it is stored, who it is shared with, and the
+        choices you have. In short, your diary stays on your device and is
+        encrypted there. Nothing is uploaded unless you are a Premium
+        subscriber and you actively turn on Cloud Backup.
+    </p>
+    <p>
+        By using HeartNote, you agree to this policy. If you do not agree,
+        please do not use the app.
+    </p>
+
+    <h2>2. Information That Stays on Your Device</h2>
+    <p>The following information is stored only in the app's private storage on your device:</p>
+    <ul>
+        <li><strong>Diary entries:</strong> Title, text, entry date, mood, tags, favorite status, and creation and edit times.</li>
+        <li><strong>Photo attachments:</strong> Images you add to an entry.</li>
+        <li><strong>App lock data:</strong> Your PIN, stored in protected form, and your biometric-unlock preference.</li>
+        <li><strong>Settings and consent choices:</strong> For example, whether you have agreed to Cloud Backup.</li>
+    </ul>
+
+    <p>
+        The text of each diary entry and your photo attachments are encrypted
+        with AES-256-GCM, using a key held in the Android Keystore. The key is
+        tied to your device, and we never receive it. We do not have access to
+        the contents of your diary, and we cannot recover it if you lose your
+        device or clear the app's data.
+    </p>
+
+    <p><strong>Biometrics:</strong> If you enable fingerprint or face unlock, authentication is handled entirely by Android. HeartNote only receives a success or failure result. We never receive, see, or store your fingerprint or face data.</p>
+
+    <p><strong>Screenshots:</strong> The app blocks screenshots, screen recording, and the recent-apps preview of diary screens to protect your privacy.</p>
+
+    <p><strong>Android backup:</strong> HeartNote opts out of Android's automatic cloud backup, so your diary is not copied into a Google or device backup without your knowledge.</p>
+
+    <h2>3. Cloud Backup (Premium, Optional, Off by Default)</h2>
+    <p>
+        Cloud Backup is available only to Premium subscribers and is never
+        enabled automatically. Before anything is uploaded, you must give
+        explicit consent in the app.
+    </p>
+    <p>If you turn it on, the app does the following:</p>
+    <ul>
+        <li><strong>Creates an anonymous account:</strong> Firebase Authentication creates an account without requiring a name, email address, or password. It provides your backup with a random unique ID.</li>
+        <li><strong>Uploads your diary entries:</strong> Entries are uploaded to Firebase Realtime Database under your unique ID. Access rules are configured so each account can access only its own data.</li>
+    </ul>
+
+    <p>What is uploaded for each entry:</p>
+    <ul>
+        <li>The entry text in encrypted form, along with the value needed to decrypt it. The decryption key stays on your device.</li>
+        <li>The entry's title, mood, tags, date, favorite status, timestamps, a reference to any photo attachment, and an identifier for the device that last saved it.</li>
+    </ul>
+
+    <div class="notice">
+        Entry metadata such as titles, moods, tags, dates, and timestamps is
+        not end-to-end encrypted. It is protected in transit and by Google's
+        server-side security, but it is readable by the backend service.
+        Avoid putting highly sensitive information in titles or tags when
+        using Cloud Backup. Photo attachments are not uploaded in the current
+        version and remain on your device.
+    </div>
+
+    <h3>Turning Off Cloud Backup and Deleting Data</h3>
+    <p>
+        You can turn Cloud Backup off at any time. This stops future uploads.
+        To remove data that has already been uploaded, use
+        <strong>Settings &rarr; Privacy &rarr; Delete Cloud Data</strong>.
+        This deletes your cloud diary backup. Residual copies may remain in
+        Google's systems for a limited time before they are overwritten.
+    </p>
+
+    <h2>4. Purchases and Premium Status</h2>
+    <p>
+        Subscriptions and purchases are processed by Google Play. We never see
+        your payment card or other payment details.
+    </p>
+    <p>To determine whether you are Premium, the app:</p>
+    <ul>
+        <li>Asks Google Play Billing for your current purchases on your device.</li>
+        <li>Sends the purchase token and product ID to our purchase-verification function using Firebase Cloud Functions, which checks with Google Play that the purchase is valid.</li>
+    </ul>
+    <p>We use this information only to confirm your Premium entitlement and keep ads away from Premium users.</p>
+
+    <h2>5. Advertising</h2>
+    <p>
+        Free users see ads served by Google AdMob, including banner ads and a
+        full-screen ad after saving an entry. Premium users do not see ads.
+    </p>
+    <p>
+        To show ads, the Google Mobile Ads SDK may collect and use information
+        such as your advertising ID, IP address, device and operating-system
+        details, and ad interaction data. Ads may be personalized. Google
+        handles this data for ad delivery, measurement, and fraud prevention
+        under its
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+    </p>
+    <p><strong>Your diary content is never shared with advertisers or the ad SDK.</strong></p>
+    <p>
+        You can limit ad personalization or reset your advertising ID in your
+        Android settings, such as Settings &rarr; Privacy &rarr; Ads or
+        Settings &rarr; Google &rarr; Ads, depending on your device. You can
+        also remove ads by upgrading to Premium.
+    </p>
+
+    <h2>6. Crash Reports</h2>
+    <p>
+        HeartNote uses Firebase Crashlytics to identify and fix crashes.
+        When the app crashes, it may send technical information such as the
+        device model, Android version, app version, a stack trace, and a
+        randomly generated installation identifier.
+    </p>
+    <p>
+        The app is designed not to place diary content, PINs, or encryption
+        keys in crash logs.
+    </p>
+
+    <h2>7. Exporting Your Diary</h2>
+    <p>
+        The <strong>Export diary</strong> feature creates a ZIP file containing
+        your entries in readable form, including decrypted text. The file is
+        saved wherever you choose and is not encrypted. HeartNote does not
+        send it anywhere.
+    </p>
+    <p>
+        Please store the exported file somewhere safe because anyone with
+        access to it may be able to read its contents.
+    </p>
+
+    <h2>8. Permissions the App Uses</h2>
+    <ul>
+        <li><strong>Internet and network state:</strong> For Premium Cloud Backup, purchase verification, ads, and crash reporting. The app works fully offline without them.</li>
+        <li><strong>Biometric:</strong> To let you unlock the app with your fingerprint or face.</li>
+        <li><strong>Notifications:</strong> To show notifications if you allow them.</li>
+    </ul>
+    <p>
+        The app does not request access to your contacts, location,
+        microphone, camera, or SMS.
+    </p>
+
+    <h2>9. Who We Share Information With</h2>
+    <p>We do not sell your personal information. We share data only with service providers that operate parts of the app, as described below:</p>
+    <ul>
+        <li><strong>Google Firebase:</strong> Authentication, Realtime Database, Cloud Functions, and Crashlytics for Cloud Backup, purchase verification, and crash reports.</li>
+        <li><strong>Google Play:</strong> Purchases and subscriptions.</li>
+        <li><strong>Google AdMob:</strong> Advertising for free users.</li>
+    </ul>
+    <p>
+        We may also disclose information if required by law or to protect the
+        rights, safety, or security of users or the public.
+    </p>
+
+    <h2>10. Data Retention and Your Choices</h2>
+    <ul>
+        <li><strong>On-device data:</strong> Stays until you delete entries, clear the app's data, or uninstall the app.</li>
+        <li><strong>Cloud backup data:</strong> Stays until you delete it using Delete Cloud Data or it is otherwise removed under our backup-retention practices.</li>
+        <li><strong>Crash and ad data:</strong> Is retained by Google according to its own retention policies.</li>
+        <li><strong>Consent:</strong> You can withdraw Cloud Backup consent at any time in Settings.</li>
+    </ul>
+    <p>
+        Because we do not collect your name or email for anonymous cloud
+        accounts, we usually cannot link cloud data to you personally. Please
+        use the in-app deletion tools. If you have trouble, contact us using
+        the email address provided above.
+    </p>
+
+    <h2>11. Your Rights</h2>
+    <p>
+        Depending on where you live, including the European Economic Area,
+        the United Kingdom, or California, you may have the right to access,
+        correct, delete, or export your data; object to or restrict certain
+        processing; and withdraw consent.
+    </p>
+    <p>
+        Most of these actions can be performed directly in the app by editing
+        or deleting entries, exporting your diary, deleting cloud data, or
+        turning off Cloud Backup. For other requests, email us and we will
+        respond within a reasonable time and within any period required by
+        applicable law. You also have the right to complain to your local
+        data protection authority.
+    </p>
+
+    <h2>12. Security</h2>
+    <p>
+        We use safeguards that include encryption of diary text and images
+        at rest, a key store provided by Android, an app lock with a PIN and
+        optional biometrics, encrypted network connections, and per-account
+        access rules for cloud data.
+    </p>
+    <p>
+        No method of storage or transmission is completely secure, and we
+        cannot guarantee absolute security.
+    </p>
+
+    <h2>13. Children's Privacy</h2>
+    <p>
+        HeartNote is not directed to children under 13, or under the minimum
+        age of digital consent in your country. We do not knowingly collect
+        personal information from children. If you believe a child has
+        provided information to us, contact us and we will take appropriate
+        steps to delete it.
+    </p>
+
+    <h2>14. International Transfers</h2>
+    <p>
+        Google's services may process data in countries other than your own,
+        including the United States. Where required, Google relies on
+        recognized transfer mechanisms to protect your data.
+    </p>
+
+    <h2>15. Changes to This Policy</h2>
+    <p>
+        We may update this policy from time to time. We will change the
+        effective date at the top, and for material changes, we will provide
+        notice in the app or on this page.
+    </p>
+
+    <h2>16. Contact Us</h2>
+    <p>If you have questions or requests about this policy or your data, contact:</p>
+    <p>
+        <strong>HeartNote</strong><br>
+        <strong>Email:</strong>
+        <a href="mailto:zsdevelopers4@gmail.com">zsdevelopers4@gmail.com</a>
+    </p>
+</main>
+
+<footer>
+    &copy; 2026 HeartNote. All rights reserved.
+</footer>
+
+</body>
+</html>
