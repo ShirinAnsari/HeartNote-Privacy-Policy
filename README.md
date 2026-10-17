@@ -1,1 +1,0 @@
-# HeartNote-Privacy-Policy
